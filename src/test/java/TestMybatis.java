@@ -30,7 +30,7 @@ public class TestMybatis {
   @Autowired
   private IUserDao dao;
 
-  @Test
+  //@Test
   public void testSelectUser() throws Exception {
     Integer id = 1;
     User user = dao.selectByPrimaryKey(id);
@@ -46,9 +46,9 @@ public class TestMybatis {
 
   @Test
   public void testlogic(){
-      logger.info("logback 成功了");
-      logger.error("logback 成功了");
-      logger.debug("logback 成功了");
+      logger.info("logback 成功了1");
+      logger.error("logback 成功了2");
+      logger.debug("logback 成功了3");
 
   }
 }

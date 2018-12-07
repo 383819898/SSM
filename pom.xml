@@ -16,21 +16,9 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
-    <!-- spring版本号 -->
-  <!--  <spring.version>5.1.1.RELEASE</spring.version>
-
-    &lt;!&ndash; mybatis版本号 &ndash;&gt;
-    <mybatis.version>3.4.6</mybatis.version>
-
-    &lt;!&ndash; mysql驱动版本号 &ndash;&gt;
-    <mysql-driver.version>8.0.13</mysql-driver.version>
-
-    &lt;!&ndash; log4j日志包版本号 &ndash;&gt;
-    <slf4j.version>1.7.25</slf4j.version>
-    <log4j.version>1.2.17</log4j.version>
-    <logback.version>1.1.2</logback.version>-->
-
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <argLine>-Dfile.encoding=UTF-8</argLine>
 
     <!-- spring版本号 -->
     <spring.version>5.1.1.RELEASE</spring.version>
@@ -48,6 +36,10 @@
     <jackson.version>2.9.7</jackson.version>
     <logback.version>1.2.3</logback.version>
 
+   <!-- 权限控制-->
+    <shiro.version>1.4.0</shiro.version>
+
+
   </properties>
 
 
@@ -59,11 +51,14 @@
       <version>1.2</version>
     </dependency>
 
+    <!-- https://mvnrepository.com/artifact/javax/javaee-api -->
     <dependency>
       <groupId>javax</groupId>
       <artifactId>javaee-api</artifactId>
-      <version>7.0</version>
+      <version>8.0</version>
+      <scope>provided</scope>
     </dependency>
+
 
     <!-- 添加junit4依赖 -->
     <dependency>
@@ -234,11 +229,13 @@
       <version>1.9</version>
     </dependency>
 
+<!--
     <dependency>
       <groupId>org.aspectj</groupId>
       <artifactId>aspectjweaver</artifactId>
       <version>1.8.13</version>
     </dependency>
+-->
 
     <!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
     <dependency>
@@ -246,6 +243,28 @@
       <artifactId>servlet-api</artifactId>
       <version>2.5</version>
       <scope>provided</scope>
+    </dependency>
+
+
+    <dependency>
+      <groupId>org.apache.shiro</groupId>
+      <artifactId>shiro-core</artifactId>
+      <version>${shiro.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.shiro</groupId>
+      <artifactId>shiro-web</artifactId>
+      <version>${shiro.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.shiro</groupId>
+      <artifactId>shiro-ehcache</artifactId>
+      <version>${shiro.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.shiro</groupId>
+      <artifactId>shiro-spring</artifactId>
+      <version>${shiro.version}</version>
     </dependency>
 
 
