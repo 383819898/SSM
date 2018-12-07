@@ -1,8 +1,10 @@
+
 import com.guoguo.dao.IUserDao;
 import com.guoguo.entity.User;
-import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -21,7 +23,9 @@ import org.springframework.test.context.web.WebAppConfiguration;
 @WebAppConfiguration("src/main/resources")
 public class TestMybatis {
 
-  private static Logger logger = Logger.getLogger(TestMybatis.class);
+ /* private static Logger logger = LoggerFactory.getLogger(TestMybatis.class);*/
+
+  Logger logger = LoggerFactory.getLogger(TestMybatis.class);
 
   @Autowired
   private IUserDao dao;
@@ -33,10 +37,18 @@ public class TestMybatis {
 
       System.out.println(user.getUsername());
 
-      dao.deleteByPrimaryKey(2);
+/*      dao.deleteByPrimaryKey(2);*/
       User login = dao.login(user);
 
       System.out.println(login.toString());
+
+  }
+
+  @Test
+  public void testlogic(){
+      logger.info("logback 成功了");
+      logger.error("logback 成功了");
+      logger.debug("logback 成功了");
 
   }
 }
